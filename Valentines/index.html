@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Game</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fffafc;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(6, 50px);
+            grid-gap: 5px;
+            margin-bottom: 20px;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ddd;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #fff;
+        }
+        .cell.correct {
+            background-color: #6aaa64;
+            color: #fff;
+        }
+        .cell.present {
+            background-color: #c9b458;
+            color: #fff;
+        }
+        .cell.absent {
+            background-color: #787c7e;
+            color: #fff;
+        }
+        #guessInput {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #e9a3c9;
+            border-radius: 5px;
+        }
+        #submitBtn {
+            background: linear-gradient(45deg, #ff85a1, #ff5376);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #submitBtn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        #submitBtn:active {
+            transform: scale(0.95);
+        }
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff5376;
+            text-align: center;
+            background: linear-gradient(45deg, #ffe6ec, #ffccd8);
+            border-radius: 10px;
+            border: 2px solid #ff85a1;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="board" id="board"></div>
+    <input type="text" id="guessInput" maxlength="6" placeholder="Enter a 6-letter word" />
+    <button id="submitBtn">Submit Guess</button>
+    <div id="message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
